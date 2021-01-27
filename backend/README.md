@@ -3,11 +3,18 @@ having a "fully functional" express CRUD (create, read, update, delete) server.
 
 This example is an oversimplified one, I would not really suggest using it as-is for real servers.
 If you need to try mocks, this might be useful.
+Customer id is "generated" (increment)
+There is no error handling.
 
 Usage:
 ```
 npm install
 npm start
+```
+
+It runs on 
+```
+http://localhost:3001
 ```
 
 Initial customers table:
@@ -34,12 +41,12 @@ retrieves the customer array
 ```
 POST /customers
 ```
-posts one customer to the customer array
+posts one customer to the customer array (only need "name" in request body)
 
 ```
 PUT /customers/:id
 ```
-modifies a customer with the given id in the customer array
+modifies a customer with the given id in the customer array (only need "name" in request body)
 
 ```
 DELETE /customers/:id
