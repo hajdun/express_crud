@@ -9,34 +9,38 @@ class App extends React.Component {
     }
   }
 
+  // retrieve all customers on a GET http://localhost:3001/customers request
   getCustomers = () => {
-    axios.get('http://localhost:3000/customers').then(customers => {
+    axios.get('http://localhost:3001/customers').then(customers => {
       console.log(customers);
       this.setState({ customers: customers.data })
     });
   }
 
+  // save a new customer to the customer table on a POST http://localhost:3001/customers request
   postCustomer = () => {
     const requestBody = {
       name: "Hendrikksen Customer"
     }
-    axios.post('http://localhost:3000/customers', requestBody).then(customers => {
+    axios.post('http://localhost:3001/customers', requestBody).then(customers => {
       this.setState({ customers: customers.data })
     });
   }
 
+  // updates an existing customer in the customer table on a PUT http://localhost:3001/customers/[customerId] request
   putCustomer = () => {
     const requestBody = {
       name: "Amalia Customer"
     }
-    axios.put('http://localhost:3000/customers/1', requestBody).then(customers => {
+    axios.put('http://localhost:3001/customers/1', requestBody).then(customers => {
       console.log(customers);
       this.setState({ customers: customers.data })
     });
   }
 
+  // deletes an existing customer in the customer table on a DELETE http://localhost:3001/customers/[customerId] request
   deleteCustomer = () => {
-    axios.delete('http://localhost:3000/customers/1').then(customers => {
+    axios.delete('http://localhost:3001/customers/1').then(customers => {
       console.log(customers);
       this.setState({ customers: customers.data })
     });

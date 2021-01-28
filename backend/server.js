@@ -57,7 +57,7 @@ app.delete('/customers/:id', (req, res) => {
   const idFromParameter = req.params.id.toString()
 
   customers = customers.filter(element => {
-    return element.id.toString() === idFromParameter
+    return element.id.toString() != idFromParameter
   });
   res.json(customers)
 })
